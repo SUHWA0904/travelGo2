@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="path" value="${pageContext.request.contextPath }"/>
+<c:set var="basepath" value="${requestScope['javax.servlet.forward.servlet_path']}" /> 
 <!DOCTYPE html>
 <html data-theme="lemonade">
   <head>
@@ -106,28 +107,56 @@
               </label>
 				
 				<div class="flex w-full justify-between">
-              <!-- 홈 로고 -->
-              <div id="mainLogo" class="ml-3 flex min-w-fit items-center justify-center hover:text-primary">
-                <div class="bg-base-100 flex rounded-full p-2.5 font-semibold">
-                  <a href="${path }/" class="leading-5">
-                    <p>여행가자고</p>
-                  </a>
-                </div>
-              </div>
-
-              <!-- 메인 로고 -->
-              <div id="centerLogo" class="flex min-w-fit items-center justify-center mr-16">
-                <a class="bg-base-100 rounded-full p-2 hover:cursor-pointer hover:text-primary" href="${path }/">
-                  	<img src="${path }/resources/images/mainlogo.gif" width="150" height="50"/>
-                </a>
-              </div>
-
-              <!-- 로그인 영역 -->
-              <div id="loginLogo" class="flex min-w-fit items-center mr-6 justify-center">
-                <a href="${path }/" class="bg-base-100 rounded-full p-2 hover:cursor-pointer hover:text-primary">
-                  	<img src="${path }/resources/images/로그인.png" width="30" height="30"/>
-                </a>
-              </div>
+	              <!-- 홈 로고 -->
+	              <div id="mainLogo" class="ml-3 flex min-w-fit items-center justify-center hover:text-primary">
+	                <div class="bg-base-100 flex rounded-full p-2.5 font-semibold">
+	                  <a href="${path }/" class="leading-5">
+	                    <p>여행가자고</p>
+	                  </a>
+	                </div>
+	              </div>
+	
+	              <!-- 메인 로고 -->
+	              <div id="centerLogo" class="flex min-w-fit items-center justify-center mr-16">
+	                <a class="bg-base-100 rounded-full p-2 hover:cursor-pointer hover:text-primary" href="${path }/">
+	                  	<img src="${path }/resources/images/mainlogo.gif" width="150" height="50"/>
+	                </a>
+	              </div>
+	
+	              <!-- 로그인 영역 -->
+	              <div id="loginLogo" class="flex min-w-fit items-center mr-6 justify-center">
+	                <a href="${path }/" class="bg-base-100 rounded-full p-2 hover:cursor-pointer hover:text-primary">
+	                  	<img src="${path }/resources/images/로그인.png" width="30" height="30"/>
+	                </a>
+	              </div>
               </div>
             </nav>
           </div>
+          <c:if test="${basepath ne '/'}">
+          	<div class="w-full fixed top-24 h-[60px] bg-secondary flex justify-center">
+          		<div class="w-[50%] h-full flex justify-between items-center text-lg text-secondary-content font-semibold">
+          			<div class="">
+          				<a href="${path }/travelboard/travelboardmain.do" class="hover:text-primary">
+          					여행지
+          				</a>
+          			</div>
+          			<div class="">
+          				<a href="" class="hover:text-primary">
+          					내 동선
+          				</a>
+          			</div>
+          			<div class="">
+          				<a href="" class="hover:text-primary">
+          					추천 동선
+          				</a>
+          			</div>
+          			<div class="">
+          				<a href="" class="hover:text-primary">
+          					찜페이지
+          				</a>
+          			</div>
+          		</div>
+          	</div>
+          </c:if>
+          
+          

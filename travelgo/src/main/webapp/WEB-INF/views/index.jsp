@@ -55,7 +55,7 @@
 
                 <div class="flex justify-between w-[60%] min-h-[60px] mt-10">
                   <div class="w-20 text-center">
-                    <a href="${path }/" class="flex flex-col justify-center items-center hover:text-primary">
+                    <a href="${path }/travelboard/travelboardmain.do" class="flex flex-col justify-center items-center hover:text-primary">
                    	  <img src="${path }/resources/images/여행지.png" width="30" height="30"/>
                    	  <p>여행지</p>
                     </a>
@@ -78,7 +78,7 @@
                   <div class="w-20 text-center">
                     <a href="${path }/" class="flex flex-col justify-center items-center hover:text-primary">
                       <img src="${path }/resources/images/찜.png" width="30" height="30"/>
-                      <p>찜</p>
+                      <p>찜페이지</p>
                     </a>
                   </div>
                 </div>
